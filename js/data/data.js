@@ -76,7 +76,7 @@ const siteData = {
             {
                 company: "Nissan Digital India LLP",
                 website: "https://www.nissanmotor.jobs/ami/india/ndi/index.html",
-                logo: "files/ndiLogo.png",
+                logo: "files/ndi.png",
                 location: "Trivandrum, India",
                 dates: "09/2018 - 06/2022",
                 role: "Software Engineer I & Intern",
