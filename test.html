@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Divya Upadhyay Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* CSS Variables for Dynamic Color Palette */
+        :root {
+            --primary-color: #0077b6;
+            --secondary-color: #90e0ef;
+            --background-color: #f9f9f9;
+            --section-background: #ffffff;
+            --text-color: #333333;
+            --accent-color: #e0f7fa;
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Lato', sans-serif;
+            --default-image: url('https://via.placeholder.com/180?text=Default+Image'); /* Default image URL */
+        }
+
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-bottom: 0.75em;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5em;
+            display: inline-block;
+        }
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Toggle Button and Color Switcher Container Styles */
+        .toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex; /* To align items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+
+        .toggle-button, .palette-button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 2em;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            margin-left: 10px; /* Space between buttons */
+        }
+
+        .toggle-button:hover, .palette-button:hover {
+            opacity: 1;
+        }
+
+
+        /* Color Switcher Styles - Modified for Toggle */
+        #colorSwitcher {
+            display: none; /* Initially hidden */
+            position: absolute; /* Positioned relative to toggle-container */
+            top: 100%; /* Below the toggle buttons */
+            right: 0; /* Align to the right of toggle buttons */
+            background: var(--section-background);
+            border: 1px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px; /* Reduced padding */
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            z-index: 999; /* Ensure it's above other content */
+            font-size: 0.9em; /* Reduced font size */
+            margin-top: 5px; /* Add some space between buttons and palette */
+        }
+
+        #colorSwitcher.active {
+            display: block; /* Show when active class is applied */
+        }
+
+
+        #colorSwitcher label {
+            font-size: 0.8em; /* Further reduced label font size */
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 3px; /* Reduced margin */
+        }
+        #colorSwitcher input {
+            margin-bottom: 10px; /* Reduced margin */
+            width: 80px; /* Reduced width of color input */
+            height: 25px; /* Reduced height of color input */
+            padding: 0; /* Remove padding */
+            border: none; /* No border for cleaner look */
+            border-radius: 5px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        #colorSwitcher input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        #colorSwitcher input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 4px;
+        }
+        #colorSwitcher input[type="color"]::-moz-color-swatch-wrapper {
+            padding: 0;
+        }
+        #colorSwitcher input[type="color"]::-moz-color-swatch {
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Scroll to Top/Bottom Arrow Styles */
+        .scroll-arrow-container {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 998; /* Below toggle buttons but above content */
+        }
+
+        .scroll-arrow {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 2em;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for direction change */
+        }
+
+        .scroll-arrow:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+
+        /* SPA Styles */
+        #spa-view {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color); /* Match body background */
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: var(--primary-color);
+        }
+
+        #spa-view.active {
+            display: flex; /* Show SPA when active class is added */
+        }
+
+        .spa-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: var(--primary-color); /* Healthcare AI icon color */
+        }
+
+        .spa-links-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spa-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .spa-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .spa-circle:hover {
+            background-color: var(--primary-color);
+            color: var(--section-background);
+            transform: scale(1.1);
+        }
+
+        .spa-link-icon {
+            font-size: 2em;
+        }
+
+
+        /* Landing Section Styles */
+        .landing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            min-height: 100vh;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color) 40%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 1em;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-image: var(--default-image); /* Default image as background */
+            background-size: cover;
+            background-position: center;
+        }
+        .profile-image.default-image {
+            background-image: var(--default-image);
+        }
+
+
+        .landing h1 {
+            color: white;
+            margin-bottom: 0.5em;
+            font-size: 2.5em;
+        }
+        .landing p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin-bottom: 1.5em;
+            line-height: 1.8;
+        }
+
+        /* New Summary Section */
+        .summary-section {
+            display: flex;
+            padding: 20px;
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: var(--section-background);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            align-items: flex-start; /* Align items to the start */
+            text-align: left; /* Left align text within the section */
+        }
+
+        .summary-section .profile-image {
+            width: 150px; /* Adjust size in summary section */
+            height: 150px;
+            margin: 0 20px 0 0; /* Space to the right of the image */
+            border-width: 4px; /* Slightly thinner border */
+        }
+
+        .summary-section .summary-text {
+            flex: 1; /* Take remaining space */
+            color: var(--text-color);
+        }
+
+        .summary-section .summary-text h2 {
+            color: var(--primary-color); /* Ensure heading color is correct */
+            border-bottom: none; /* No border under heading in this section */
+            padding-bottom: 0; /* No padding under heading */
+            margin-bottom: 0.5em; /* Space below heading */
+        }
+
+        .summary-section .summary-text ul {
+            list-style: disc; /* Use disc bullets */
+            padding-left: 25px; /* Indent list items */
+        }
+
+        .summary-section .summary-text li {
+            margin-bottom: 0.5em; /* Spacing between list items */
+            font-size: 1em; /* Adjust font size as needed */
+            line-height: 1.6;
+        }
+
+
+        /* Icon Navigation Styles - unchanged */
+        .icon-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 2em;
+        }
+        .icon-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .icon-nav a:hover {
+            transform: scale(1.1);
+        }
+        .nav-icon {
+            font-size: 2.5em;
+            color: var(--section-background);
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-text {
+            display: block;
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            color: var(--section-background);
+        }
+
+        /* Common Section Styles - unchanged */
+        .section {
+            padding: 60px 20px;
+            background-color: var(--section-background);
+            margin: 30px auto;
+            width: 95%;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-size: 2.2em;
+            margin-bottom: 0.8em;
+            padding-bottom: 0.6em;
+        }
+
+        /* Timeline Styles - unchanged */
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+            padding: 30px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            width: 48%;
+            padding: 25px 30px;
+            background: var(--accent-color);
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 52%;
+            text-align: left;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 5px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(odd)::before {
+            right: -12px;
+        }
+        .timeline-item:nth-child(even)::before {
+            left: -12px;
+        }
+        .timeline-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
+        }
+        .timeline-item p {
+            font-size: 1em;
+            color: var(--text-color);
+            margin: 0.4em 0;
+        }
+
+        /* Education and Volunteering Timeline Items - unchanged */
+        .education-item p, .volunteering-item p {
+            font-size: 0.95em;
+            margin: 0.3em 0;
+        }
+
+        /* Work Experience Section Styles - unchanged */
+        .work-item {
+            margin-bottom: 50px;
+        }
+        .work-item .work-item-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        .work-item .company-logo {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+        }
+        .work-item .company-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+        .work-item .work-details {
+            flex-grow: 1;
+            text-align: left;
+        }
+        .work-item .work-details h3 {
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 0.4em;
+        }
+        .work-item .location, .work-item .dates, .work-item .role {
+            margin: 0.3em 0;
+            font-size: 1em;
+            color: #666;
+        }
+        .work-item .responsibilities {
+            margin: 10px 0 10px 20px;
+            list-style-type: disc;
+        }
+        .visit-website {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease;
+        }
+        .visit-website:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Skills Section - Domain Categories - unchanged */
+        .skills-category {
+            margin-bottom: 25px;
+        }
+        .skills-category h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+        .skills-category ul {
+            list-style: disc;
+            margin-left: 25px;
+        }
+        .skills-category li {
+            margin-bottom: 6px;
+            font-size: 1em;
+        }
+
+        /* Responsive Adjustments - unchanged */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 20px;
+                text-align: left;
+                margin-bottom: 40px;
+            }
+            .timeline-item:nth-child(odd)::before {
+                right: auto;
+                left: 10px;
+            }
+            .timeline-item:nth-child(even)::before {
+                left: 10px;
+            }
+            .work-item .work-item-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .work-item .company-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+             .summary-section {
+                flex-direction: column; /* Stack image and text vertically on smaller screens */
+                align-items: center; /* Center items on smaller screens */
+                text-align: center; /* Center text on smaller screens */
+            }
+
+            .summary-section .profile-image {
+                margin-bottom: 20px; /* Add space below image on smaller screens */
+                margin-right: 0; /* Remove right margin on smaller screens */
+            }
+        }
+
+        /* Footer Styles - updated with LinkedIn */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        footer .contact-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        footer .contact-info a {
+            color: #fff;
+            font-size: 1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="toggle-container">
+        <button class="toggle-button" id="spaToggle" title="Healthcare AI Single Page View">
+            <i class="fas fa-lightbulb"></i>
+        </button>
+        <button class="palette-button" id="paletteToggle" title="Color Palette">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div id="colorSwitcher">
+            <label for="primaryColor">Primary</label>
+            <input type="color" id="primaryColor" value="#0077b6">
+
+            <label for="secondaryColor">Secondary</label>
+            <input type="color" id="secondaryColor" value="#90e0ef">
+
+            <label for="textColor">Text</label>
+            <input type="color" id="textColor" value="#333333">
+        </div>
+    </div>
+
+    <div class="scroll-arrow-container">
+        <button class="scroll-arrow" id="scrollArrow" title="Scroll to Bottom">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <div id="spa-view">
+        <i class="fas fa-heartbeat spa-icon"></i> <i class="fas fa-brain spa-icon" style="margin-left: -20px;"></i> <h1>Healthcare AI Journey</h1>
+        <div class="spa-links-container">
+            <a href="#" class="spa-link">
+                <div class="spa-circle"><i class="fas fa-book-open spa-link-icon"></i></div>
+                Good Reads
+            </a>
+            <a href="#" class="spa-link">
+                <div class="spa-circle"><i class="fas fa-hand-sparkles spa-link-icon"></i></div>
+                Contribution
+            </a>
+            <a href="#" class="spa-link">
+                <div class="spa-circle"><i class="fas fa-file-alt spa-link-icon"></i></div>
+                My Posts
+            </a>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <section class="landing" id="landing">
+            <img src="https://via.placeholder.com/180" alt="Profile Image" class="profile-image" id="profileImage">
+            <h1>Divya Upadhyay</h1>
+            <p>
+                A dynamic Full-Stack Engineer and Machine Learning expert, driving innovation through scalable web applications, DevOps pipelines, and advanced AI solutions. Integrating cutting-edge technologies to deliver impactful digital transformations.
+            </p>
+
+            <div class="icon-nav">
+                <a href="#education" title="Education">
+                    <span class="nav-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="nav-text">Education</span>
+                </a>
+                <a href="#work" title="Work Experience">
+                    <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                    <span class="nav-text">Work</span>
+                </a>
+                <a href="#volunteering" title="Volunteer">
+                    <span class="nav-icon"><i class="fas fa-hands-helping"></i></span>
+                    <span class="nav-text">Volunteering</span>
+                </a>
+                <a href="#projects" title="Projects">
+                    <span class="nav-icon"><i class="fas fa-folder-open"></i></span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#skills" title="Skills">
+                    <span class="nav-icon"><i class="fas fa-laptop-code"></i></span>
+                    <span class="nav-text">Skills</span>
+                </a>
+                <a href="#awards" title="Awards">
+                    <span class="nav-icon"><i class="fas fa-award"></i></span>
+                    <span class="nav-text">Awards</span>
+                </a>
+                 <a href="#certifications" title="Certifications">
+                    <span class="nav-icon"><i class="fas fa-certificate"></i></span>
+                    <span class="nav-text">Certifications</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="section summary-section" id="journey-summary">
+            <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-image">
+            <div class="summary-text">
+                <h2>My Journey at a Glance <i class="fas fa-route" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+                <ul>
+                    <li><strong>Education:</strong> MS in Computer and Information Sciences, University of Florida; B Tech in Computer Science and Engineering, KIIT University.</li>
+                    <li><strong>Skills:</strong> Full-Stack Engineering, Machine Learning, Cloud & DevOps, Data Engineering, and more.</li>
+                    <li><strong>Interests:</strong> Staying updated with Geopolitics, AI, Healthcare AI, and expressing creativity through Dance and Poetry.</li>
+                    <li><strong>Soft Skills:</strong> Problem-solving, Leadership, Communication, Teamwork, Adaptability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <h2>Education <i class="fas fa-graduation-cap" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item education-item">
+                    <h3>University of Florida</h3>
+                    <p><strong>MS in Computer and Information Sciences</strong> (2021 - 2024)</p>
+                    <p>GPA: 3.90. Focus on advanced computing, data analysis, and innovative research methodologies.</p>
+                </div>
+                <div class="timeline-item education-item">
+                    <h3>Kiit University</h3>
+                    <p><strong>B Tech in Computer Science and Engineering</strong> (2014 - 2018)</p>
+                    <p>GPA: 8.98. Emphasis on software development, algorithms, and system design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="work">
+            <h2>Work Experience <i class="fas fa-briefcase" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item work-item">
+                    <div class="work-item-content">
+                        <div class="company-logo">
+                            <img src="https://via.placeholder.com/100?text=HealthiAI" alt="Healthi AI Logo">
+                        </div>
+                        <div class="work-details">
+                            <h3>
+                                <a href="https://healthiai.com" target="_blank">Healthi AI <i class="fas fa-heartbeat" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></a>
+                            </h3>
+                            <p class="location">Remote</p>
+                            <p class="dates">08/2024 - Present</p>
+                            <p class="role"><em>Data Scientist</em></p>
+                            <ul class="responsibilities">
+                                <li>Developed a chatbot using Qwen2-VL for OCR and LangChain with Gemini for interactions, successfully processing unique prescription formats and styles in minutes, generating awareness and improving medication understanding by at least 15%.</li>
+                            </ul>
+                            <p><a href="https://healthiai.com" target="_blank" class="visit-website">Visit Website</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item work-item">
+                    <div class="work-item-content">
+                        <div class="company-logo">
+                            <img src="https://via.placeholder.com/100?text=UF" alt="University of Florida Logo">
+                        </div>
+                        <div class="work-details">
+                            <h3>
+                                <a href="https://www.ufl.edu" target="_blank">University of Florida</a>
+                            </h3>
+                            <p class="location">Gainesville, FL, USA</p>
+                            <p class="dates">01/2024 - 05/2024</p>
+                            <p class="role"><em>Graduate Teaching Assistant for Mobile Computing</em></p>
+                            <ul class="responsibilities">
+                                <li>Delivered lectures, provided technical assistance, and managed Canvas for the Mobile Computing course.</li>
+                            </ul>
+                            <p><a href="https://www.ufl.edu" target="_blank" class="visit-website">Visit Website</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item work-item">
+                    <div class="work-item-content">
+                        <div class="company-logo">
+                            <img src="https://via.placeholder.com/100?text=Nissan" alt="Nissan Digital India LLP Logo">
+                        </div>
+                        <div class="work-details">
+                            <h3>
+                                <a href="https://www.nissandigital.in" target="_blank">Nissan Digital India LLP</a>
+                            </h3>
+                            <p class="location">Chennai, India</p>
+                            <p class="dates">09/2018 - 06/2022</p>
+                            <p class="role"><em>Software Engineer I & Intern</em></p>
+                            <ul class="responsibilities">
+                                <li>Accelerated CI/CD pipeline delivery and AWS infrastructure automation by building the NextGen Delivery Platform, reducing SDLC timelines from 2 weeks to 3 days using Python, Boto3, Jenkins Job DSL Plugin, and Groovy Scripting.</li>
+                                <li>Built scalable web applications using Angular, Java Spring Boot, and MySQL, implementing both MVC and microservices architectures with Envoy as a sidecar proxy and Istio; applied performance optimizations including query indexing and Redis caching, ensuring security with JWT authentication, rate-limiting, and role-based access control.</li>
+                                <li>Architected and deployed a car-dent identification CNN model using AWS SageMaker for training and ECS for model serving; leveraged AWS CodePipeline for automated retraining and monitored with CloudWatch, reducing manual review time.</li>
+                                <li>Prepared environments using Ansible to configure deployment servers (AWS and Physical Data Centers), installing required dependencies and setting up security protocols while deploying projects using CI/CD pipelines (Bitbucket, Bamboo, Jenkins, SonarQube, and Nexus) for faster and reliable delivery.</li>
+                                <li>Improved code quality by increasing code coverage to 85% and reduced MTTR for security vulnerabilities by 30% using SonarQube, JMeter, Clair Scan, and Veracode, with faster rollbacks through database version control using Liquibase.</li>
+                                <li>Designed a website using Angular, Django, and PostgreSQL for monitoring DevOps tools, reducing downtime by 30%.</li>
+                                <li>Supported digitizing tightly coupled legacy infra using Agile-driven SDLC and implementing CI/CD pipelines.</li>
+                                <li>Built and deployed cloud environments using AWS CloudFormation (CNF) for scalable "Infrastructure as Code" (IaC).</li>
+                                <li>Set up Prometheus for real-time monitoring of system metrics, and integrated it with ELK for troubleshooting.</li>
+                            </ul>
+                            <p><a href="https://www.nissandigital.in" target="_blank" class="visit-website">Visit Website</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="volunteering">
+            <h2>Volunteering Experience <i class="fas fa-hands-helping" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item volunteering-item">
+                    <h3>Placeholder Organization</h3>
+                    <p><strong>Volunteer Role</strong> (20XX - Present)</p>
+                    <p>Describe your volunteering experience here. You can talk about your role, responsibilities, and what you achieved. This is a great place to show your commitment to community and other interests.</p>
+                </div>
+             </div>
+        </section>
+
+        <section class="section" id="projects">
+            <h2>Projects <i class="fas fa-folder-open" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3><a href="https://example.com/deepnucleinet" target="_blank">DeepNucleiNet: Nuclei Instance Segmentation <i class="fas fa-dna" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></a></h3>
+                    <p>Fine-tuned SAM and implemented a comparative study using YOLOv8, SAM, &amp; Detectron2 – achieving a mAP of 0.49 with Detectron2.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3><a href="https://example.com/geopricepredictor" target="_blank">GeoPricePredictor <i class="fas fa-chart-line" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></a></h3>
+                    <p>Developed a house price prediction ML model integrating intrinsic features and external POI data, achieving an R² score of 0.9 at Zoom level 16.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3><a href="https://example.com/roadaccidentanalysis" target="_blank">Road Accident Analysis <i class="fas fa-car-crash" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></a></h3>
+                    <p>Engineered an interactive dashboard to analyze over 1.3 million FARS data points using Angular and Express, providing real-time insights.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3><a href="https://example.com/medimates" target="_blank">MediMates <i class="fas fa-user-md" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></a></h3>
+                    <p>Led a team to develop a conversational AI system that generates avatars and doctor's notes from audio, leveraging cutting-edge AI tools.</p>
+                </div>
+             </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Skills <i class="fas fa-laptop-code" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>C, C++, Erlang, GoLang, Groovy, Java, Python</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Machine Learning & AI <i class="fas fa-robot" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h3>
+                <ul>
+                    <li>AI, Computer Vision (CV), Deep Learning (DL), Fine-Tuning, Generative AI, Large Language Models (LLM), Machine Learning (ML), NLP, Prompt Engineering, Transfer Learning, Vision Language Models</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Machine Learning Frameworks & Libraries</h3>
+                <ul>
+                    <li>Keras, NumPy, Pandas, PyTorch, sklearn, TensorFlow</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Cloud & DevOps <i class="fas fa-cloud" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h3>
+                <ul>
+                    <li>Automation, AWS, Bamboo, Bitbucket, CI/CD, Cloud Computing, DevOps, DevSecOps, Docker, Github, Jenkins, Kubernetes, Nexus</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Databases & Data Engineering</h3>
+                <ul>
+                    <li>Advanced SQL, Amazon Redshift, Cassandra, Data Preparation, ETL, Hadoop, MongoDB, neo4j, Oracle, PostgreSQL, Redis</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Big Data & Streaming Technologies</h3>
+                <ul>
+                    <li>Apache Airflow, Apache Kafka, Apache Spark, Apache Zookeeper</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Web Development & Frameworks</h3>
+                <ul>
+                    <li>Angular, Django, Express, Flask, Java Springboot, Node.js</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Monitoring & Security <i class="fas fa-shield-alt" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h3>
+                <ul>
+                    <li>Clair Scan, ELK Stack, JMeter, Liquibase, Prometheus, SonarQube, Veracode</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Visualization & Analytics <i class="fas fa-chart-pie" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h3>
+                <ul>
+                    <li>EDA, Tableau</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Industry-Specific AI Applications <i class="fas fa-industry" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h3>
+                <ul>
+                    <li>Healthcare AI <i class="fas fa-heartbeat" style="font-size: 0.7em; vertical-align: baseline; color: var(--secondary-color);"></i></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="awards">
+            <h2>Awards & Achievements <i class="fas fa-award" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>High Five Award</h3>
+                    <p>Awarded by Nissan Digital India LLP for outstanding performance and contribution.</p>
+                </div>
+             </div>
+        </section>
+
+        <section class="section" id="certifications">
+            <h2>Certifications <i class="fas fa-certificate" style="font-size: 0.8em; vertical-align: baseline; color: var(--secondary-color);"></i></h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Data Engineering Bootcamp</h3>
+                    <p>dataexpert.io (08/2025 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Agentic Design Patterns with AutoGen</h3>
+                    <p>DeepLearning.AI (10/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>GPU-Accelerated Data Manipulation</h3>
+                    <p>NVIDIA (10/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Knowledge Graphs for RAG</h3>
+                    <p>DeepLearning.AI (09/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Multimodal RAG: Chat with Videos</h3>
+                    <p>DeepLearning.AI (09/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Data Parallelism: Training on Multiple GPUs</h3>
+                    <p>NVIDIA (09/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>LangChain for LLM Application Development</h3>
+                    <p>DeepLearning.AI (09/2024)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>LangChain Chat with Your Data</h3>
+                    <p>DeepLearning.AI (09/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Generative AI with Diffusion Models</h3>
+                    <p>NVIDIA (02/2024 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>NLP with Transformers in Python</h3>
+                    <p>Udemy (06/2022 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Data Warehousing on AWS</h3>
+                    <p>Amazon Web Services (12/2021 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>CI/CD with Jenkins, Ansible, Docker, Kubernetes</h3>
+                    <p>Udemy (07/2021 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Monitoring &amp; Telemetry of Production Systems</h3>
+                    <p>Coursera (02/2021 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Container Orchestration using Kubernetes</h3>
+                    <p>Coursera (02/2021 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Taming Big Data with Apache Spark and Python</h3>
+                    <p>Udemy (06/2020 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Angular &amp; NodeJS - The MEAN Stack Guide</h3>
+                    <p>Udemy (05/2020 - Present)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Tableau Desktop Advanced</h3>
+                    <p>Tableau (05/2020 - Present)</p>
+                </div>
+             </div>
+        </section>
+
+
+    </div> <footer>
+        <p>&copy; 2025 Divya Upadhyay. All rights reserved.</p>
+        <div class="contact-info">
+            <a href="mailto:upadhyaydivy10@gmail.com" title="Email"><i class="fas fa-envelope"></i> upadhyaydivy10@gmail.com</a>
+            <a href="https://github.com/uDivy" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/divya-upadhyay-182560129/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="files/Divya_Upadhyay_Resume.pdf" target="_blank" title="Resume"><i class="fas fa-file-pdf"></i> Resume</a>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image Error Handling and Default Image
+            const profileImages = document.querySelectorAll('.profile-image');
+            profileImages.forEach(img => {
+                img.onerror = function() {
+                    this.src = 'https://via.placeholder.com/180?text=Default+Image'; // Set default image on error
+                    this.classList.add('default-image'); // Add class to handle styling if needed
+                };
+            });
+
+            // SPA Toggle Button functionality
+            const spaToggle = document.getElementById('spaToggle');
+            const spaView = document.getElementById('spa-view');
+            const mainContent = document.getElementById('main-content');
+
+            spaToggle.addEventListener('click', function() {
+                spaView.classList.toggle('active');
+                mainContent.classList.toggle('active'); // Toggle main content visibility if needed
+
+                if (spaView.classList.contains('active')) {
+                    mainContent.style.display = 'none'; // Hide main content when SPA is active
+                } else {
+                    mainContent.style.display = 'block'; // Show main content when SPA is inactive
+                }
+            });
+
+            // Color Switcher Functionality - Toggling and Color Change
+            const paletteToggle = document.getElementById('paletteToggle');
+            const colorSwitcher = document.getElementById('colorSwitcher');
+            const primaryColor = document.getElementById('primaryColor');
+            const secondaryColor = document.getElementById('secondaryColor');
+            const textColor = document.getElementById('textColor');
+
+
+            paletteToggle.addEventListener('click', function() {
+                colorSwitcher.classList.toggle('active');
+            });
+
+
+            primaryColor.oninput = function() {
+                document.documentElement.style.setProperty('--primary-color', this.value);
+            };
+            secondaryColor.oninput = function() {
+                document.documentElement.style.setProperty('--secondary-color', this.value);
+            };
+            textColor.oninput = function() {
+                document.documentElement.style.setProperty('--text-color', this.value);
+            };
+
+             // Scroll Arrow Functionality
+            const scrollArrow = document.getElementById('scrollArrow');
+
+            scrollArrow.addEventListener('click', function() {
+                if (scrollArrow.querySelector('i').classList.contains('fa-chevron-down')) {
+                    // Scroll to bottom
+                    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+                } else {
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const documentHeight = document.documentElement.scrollHeight - window.innerHeight; // Adjust for viewport height
+
+                if (scrollPosition > documentHeight - 50 ) { // Near bottom (adjust 50px threshold as needed)
+                    scrollArrow.querySelector('i').classList.replace('fa-chevron-down', 'fa-chevron-up');
+                    scrollArrow.setAttribute('title', 'Scroll to Top');
+                } else {
+                    scrollArrow.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    scrollArrow.setAttribute('title', 'Scroll to Bottom');
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>

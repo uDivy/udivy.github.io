@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Divya Upadhyay Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="toggle-container">
+        <button class="toggle-button" id="spaToggle" title="Healthcare AI Single Page View">
+            <i class="fas fa-lightbulb"></i>
+        </button>
+        <button class="palette-button" id="paletteToggle" title="Color Palette">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div id="colorSwitcher">
+            <label for="primaryColor">Primary</label>
+            <input type="color" id="primaryColor" value="#0077b6">
+
+            <label for="secondaryColor">Secondary</label>
+            <input type="color" id="secondaryColor" value="#90e0ef">
+
+            <label for="textColor">Text</label>
+            <input type="color" id="textColor" value="#333333">
+        </div>
+    </div>
+
+    <div class="scroll-arrow-container">
+        <button class="scroll-arrow" id="scrollArrow" title="Scroll to Bottom">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <div id="spa-view">
+        <i class="fas fa-heartbeat spa-icon"></i> <i class="fas fa-brain spa-icon"></i> <h1>Healthcare AI Journey</h1>
+        <div class="spa-links-container">
+            <a href="https://github.com/uDivy/JobFinder" class="spa-good-reads">
+                <div class="spa-circle"><i class="fas fa-book-open spa-link-icon"></i></div>
+                Good Reads
+            </a>
+            <a href="https://github.com/uDivy/JobFinder" class="spa-contribution">
+                <div class="spa-circle"><i class="fas fa-hand-sparkles spa-link-icon"></i></div>
+                Contribution
+            </a>
+            <a href="https://github.com/uDivy/JobFinder" class="spa-my-posts">
+                <div class="spa-circle"><i class="fas fa-file-alt spa-link-icon"></i></div>
+                My Posts
+            </a>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <section class="landing" id="landing">
+            <img src="files\\wolf.jpg" alt="Profile Image" class="profile-image" id="profileImage">
+            <h1 id="landing-name"></h1> <p id="landing-description"></p> <div class="icon-nav" id="landing-icon-nav">
+                </div>
+        </section>
+
+        <section class="section summary-section" id="journey-summary">
+            <img src="files\\wolf.jpg" alt="Profile Image" class="profile-image" id="summary-profile-image">
+            <div class="summary-text" id="summary-text">
+                </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="timeline" id="education-timeline">
+                </div>
+        </section>
+
+        <section class="section" id="work">
+            <div class="timeline" id="work-timeline">
+                </div>
+        </section>
+
+        <section class="section" id="volunteering">
+            <div class="timeline" id="volunteering-timeline">
+                </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="timeline" id="projects-timeline">
+                </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div id="skills-content">
+                <div class="skills-categories-card-container" id="skills-categories-card-container">
+                    </div>
+            </div>
+        </section>
+
+        <section class="section" id="awards">
+            <div class="timeline" id="awards-timeline">
+                </div>
+        </section>
+
+        <section class="section" id="certifications">
+            <div class="timeline" id="certifications-timeline">
+                </div>
+        </section>
+
+    </div> <footer>
+        <p>&copy; 2025 Divya Upadhyay. All rights reserved.</p>
+        <div class="contact-info">
+            <a href="mailto:upadhyaydivy10@gmail.com" title="Email"><i class="fas fa-envelope"></i> upadhyaydivy10@gmail.com</a>
+            <a href="https://github.com/uDivy" target="_blank" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/divya-upadhyay-182560129/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="D:\2025\Study\uDivy-portfolio\portfolio-website\files\DivyaUpadhyay_FSE.pdf" target="_blank" title="Resume"><i class="fas fa-file-pdf"></i> Resume</a>
+        </div>
+    </footer>
+    <script src="js/data/data.js"></script>
+    <script src="js/sections/Section.js"></script>
+    <script src="js/sections/LandingSection.js"></script>
+    <script src="js/sections/SummarySection.js"></script>
+    <script src="js/sections/EducationSection.js"></script>
+    <script src="js/sections/WorkSection.js"></script>
+    <script src="js/sections/VolunteeringSection.js"></script>
+    <script src="js/sections/ProjectsSection.js"></script>
+    <script src="js/sections/SkillsSection.js"></script>
+    <script src="js/sections/AwardsSection.js"></script>
+    <script src="js/sections/CertificationsSection.js"></script>
+    <script src="js/sections/Blog.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
