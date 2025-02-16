@@ -12,7 +12,10 @@
 }
 
 
-/* Global Styles */
+/* ========================================================== */
+/*                      Global Styles                         */
+/* ========================================================== */
+/* Global styles remain the same */
 
 * {
   box-sizing: border-box;
@@ -25,7 +28,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   scroll-behavior: smooth;
-  line-height: 1.6; /* Slightly reduced line height for less space */
+  line-height: 1.6;
 }
 
 body.spa-active {
@@ -41,12 +44,12 @@ h3,
 h4 {
   font-family: var(--heading-font);
   color: var(--primary-color);
-  margin-bottom: 0.5em; /* Reduced margin bottom for headings */
+  margin-bottom: 0.5em;
 }
 
 h2 {
   border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.3em; /* Reduced padding bottom for h2 */
+  padding-bottom: 0.3em;
   display: inline-block;
 }
 
@@ -61,12 +64,15 @@ a:hover {
 }
 
 
-/* Toggle Button and Color Switcher Container Styles */
+/* ========================================================== */
+/*           Toggle Button and Color Switcher Styles          */
+/* ========================================================== */
+/* Toggle Button and Color Switcher Styles remain the same */
 
 .toggle-container {
   position: fixed;
-  top: 15px; /* Slightly closer to the top */
-  right: 15px; /* Slightly closer to the right */
+  top: 15px;
+  right: 15px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -78,11 +84,11 @@ a:hover {
   background: none;
   border: none;
   color: var(--primary-color);
-  font-size: 1.8em; /* Slightly smaller icons */
+  font-size: 1.8em;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  margin-left: 8px; /* Reduced space between buttons */
+  margin-left: 8px;
 }
 
 
@@ -102,12 +108,12 @@ a:hover {
   right: 0;
   background: var(--section-background);
   border: 1px solid var(--primary-color);
-  border-radius: 8px; /* Slightly smaller border radius */
-  padding: 12px; /* Further reduced padding */
+  border-radius: 8px;
+  padding: 12px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   z-index: 999;
-  font-size: 0.85em; /* Further reduced font size */
-  margin-top: 3px; /* Further reduced margin */
+  font-size: 0.85em;
+  margin-top: 3px;
 }
 
 
@@ -117,16 +123,16 @@ a:hover {
 
 
 #colorSwitcher label {
-  font-size: 0.75em; /* Further reduced label font size */
+  font-size: 0.75em;
   color: var(--text-color);
   display: block;
-  margin-bottom: 2px; /* Further reduced margin */
+  margin-bottom: 2px;
 }
 
 #colorSwitcher input {
-  margin-bottom: 8px; /* Further reduced margin */
-  width: 70px; /* Further reduced width */
-  height: 22px; /* Further reduced height */
+  margin-bottom: 8px;
+  width: 70px;
+  height: 22px;
   padding: 0;
   border: none;
   border-radius: 4px;
@@ -155,12 +161,15 @@ a:hover {
 }
 
 
-/* Scroll to Top/Bottom Arrow Styles */
+/* ========================================================== */
+/*            Scroll to Top/Bottom Arrow Styles               */
+/* ========================================================== */
+/* Scroll to Top/Bottom Arrow Styles remain the same */
 
 .scroll-arrow-container {
   position: fixed;
   top: 50%;
-  right: 15px; /* Slightly closer to the right */
+  right: 15px;
   transform: translateY(-50%);
   z-index: 998;
 }
@@ -170,7 +179,7 @@ a:hover {
   background: none;
   border: none;
   color: var(--primary-color);
-  font-size: 1.8em; /* Slightly smaller icons */
+  font-size: 1.8em;
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -183,7 +192,10 @@ a:hover {
 }
 
 
-/* SPA Styles */
+/* ========================================================== */
+/*                         SPA Styles                         */
+/* ========================================================== */
+/* SPA Styles remain the same */
 
 #spa-view {
   display: none;
@@ -207,15 +219,15 @@ a:hover {
 
 
 .spa-icon {
-  font-size: 4em; /* Slightly smaller icon */
-  margin-bottom: 15px; /* Reduced margin */
+  font-size: 4em;
+  margin-bottom: 15px;
   color: var(--primary-color);
 }
 
 
 .spa-links-container {
   display: flex;
-  gap: 30px; /* Reduced gap */
+  gap: 30px;
   justify-content: center;
   align-items: center;
 }
@@ -231,14 +243,14 @@ a:hover {
 
 
 .spa-circle {
-  width: 70px; /* Reduced circle size */
-  height: 70px; /* Reduced circle size */
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px; /* Reduced margin */
+  margin-bottom: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -251,11 +263,14 @@ a:hover {
 
 
 .spa-link-icon {
-  font-size: 1.8em; /* Slightly smaller icon */
+  font-size: 1.8em;
 }
 
 
-/* Landing Section Styles */
+/* ========================================================== */
+/*                     Landing Section Styles                 */
+/* ========================================================== */
+/* Landing Section Styles remain the same */
 
 .landing {
   display: flex;
@@ -263,7 +278,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   height: auto;
-  min-height: 90vh; /* Reduced min-height slightly */
+  min-height: 90vh;
   padding: 20px;
   background: linear-gradient(135deg, var(--primary-color) 40%, var(--secondary-color) 100%);
   color: white;
@@ -271,12 +286,12 @@ a:hover {
 }
 
 .profile-image {
-  width: 160px; /* Reduced image size */
-  height: 160px; /* Reduced image size */
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid white; /* Thinner border */
-  margin-bottom: 0.8em; /* Reduced margin */
+  border: 4px solid white;
+  margin-bottom: 0.8em;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -287,39 +302,42 @@ a:hover {
 
 .landing h1 {
   color: white;
-  margin-bottom: 0.4em; /* Reduced margin */
-  font-size: 2.2em; /* Reduced font size */
+  margin-bottom: 0.4em;
+  font-size: 2.2em;
 }
 
 .landing p {
-  font-size: 1em; /* Reduced font size */
+  font-size: 1em;
   max-width: 700px;
-  margin-bottom: 1.2em; /* Reduced margin */
+  margin-bottom: 1.2em;
   line-height: 1.7;
 }
 
 
-/* New Summary Section */
+/* ========================================================== */
+/*                     Summary Section Styles                 */
+/* ========================================================== */
+/* Summary Section Styles remain the same */
 
 .summary-section {
   display: flex;
-  padding: 15px; /* Reduced padding */
+  padding: 15px;
   width: 95%;
   max-width: 1200px;
-  margin: 15px auto; /* Reduced margin */
+  margin: 15px auto;
   background-color: var(--section-background);
-  border-radius: 10px; /* Slightly smaller border radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   align-items: flex-start;
   text-align: left;
 }
 
 
 .summary-section .profile-image {
-  width: 130px; /* Reduced image size */
-  height: 130px; /* Reduced image size */
-  margin: 0 15px 0 0; /* Reduced margin */
-  border-width: 3px; /* Thinner border */
+  width: 130px;
+  height: 130px;
+  margin: 0 15px 0 0;
+  border-width: 3px;
 }
 
 
@@ -333,31 +351,34 @@ a:hover {
   color: var(--primary-color);
   border-bottom: none;
   padding-bottom: 0;
-  margin-bottom: 0.4em; /* Reduced margin */
+  margin-bottom: 0.4em;
 }
 
 
 .summary-section .summary-text ul {
   list-style: disc;
-  padding-left: 20px; /* Reduced padding */
+  padding-left: 20px;
 }
 
 
 .summary-section .summary-text li {
-  margin-bottom: 0.4em; /* Reduced margin */
-  font-size: 0.95em; /* Reduced font size */
+  margin-bottom: 0.4em;
+  font-size: 0.95em;
   line-height: 1.5;
 }
 
 
-/* Icon Navigation Styles - unchanged */
+/* ========================================================== */
+/*                  Icon Navigation Styles                    */
+/* ========================================================== */
+/* Icon Navigation Styles remain the same */
 
 .icon-nav {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px; /* Reduced gap */
-  margin-top: 1.5em; /* Reduced margin */
+  gap: 25px;
+  margin-top: 1.5em;
 }
 
 .icon-nav a {
@@ -373,12 +394,12 @@ a:hover {
 }
 
 .nav-icon {
-  font-size: 2.2em; /* Reduced icon size */
+  font-size: 2.2em;
   color: var(--section-background);
   background-color: var(--primary-color);
   border-radius: 50%;
-  width: 50px; /* Reduced icon size */
-  height: 50px; /* Reduced icon size */
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -386,37 +407,43 @@ a:hover {
 
 .nav-text {
   display: block;
-  margin-top: 0.4em; /* Reduced margin */
-  font-size: 0.85em; /* Reduced font size */
+  margin-top: 0.4em;
+  font-size: 0.85em;
   color: var(--section-background);
 }
 
 
-/* Common Section Styles - unchanged */
+/* ========================================================== */
+/*                   Common Section Styles                    */
+/* ========================================================== */
+/* Common Section Styles remain the same */
 
 .section {
-  padding: 40px 20px; /* Reduced padding */
+  padding: 40px 20px;
   background-color: var(--section-background);
-  margin: 20px auto; /* Reduced margin */
+  margin: 20px auto;
   width: 95%;
   max-width: 1200px;
-  border-radius: 10px; /* Slightly smaller border radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .section h2 {
-  font-size: 2em; /* Reduced font size */
-  margin-bottom: 0.6em; /* Reduced margin */
-  padding-bottom: 0.4em; /* Reduced padding */
+  font-size: 2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.4em;
 }
 
 
-/* Timeline Styles - unchanged */
+/* ========================================================== */
+/*                     Timeline Styles                        */
+/* ========================================================== */
+/* Timeline Styles - Adjusted for Mobile Responsiveness while maintaining structure */
 
 .timeline {
   position: relative;
-  margin: 40px 0; /* Reduced margin */
-  padding: 25px 0; /* Reduced padding */
+  margin: 40px 0;
+  padding: 25px 0;
 }
 
 .timeline::before {
@@ -425,19 +452,19 @@ a:hover {
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px; /* Thinner line */
+  width: 4px;
   background: var(--primary-color);
   transform: translateX(-50%);
 }
 
 .timeline-item {
   position: relative;
-  width: 48%;
-  padding: 20px 25px; /* Reduced padding */
+  width: 48%; /* Default width for larger screens */
+  padding: 20px 25px;
   background: var(--accent-color);
-  border-radius: 8px; /* Slightly smaller border radius */
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
-  margin-bottom: 15px; /* Reduced margin */
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
 }
 
 .timeline-item:nth-child(odd) {
@@ -453,67 +480,73 @@ a:hover {
 .timeline-item::before {
   content: '';
   position: absolute;
-  top: 20px; /* Reduced top position */
-  width: 20px; /* Reduced size */
-  height: 20px; /* Reduced size */
+  top: 20px;
+  width: 20px;
+  height: 20px;
   background: white;
-  border: 4px solid var(--primary-color); /* Thinner border */
+  border: 4px solid var(--primary-color);
   border-radius: 50%;
   z-index: 1;
 }
 
 .timeline-item:nth-child(odd)::before {
-  right: -10px; /* Adjusted position */
+  right: -10px;
 }
 
 .timeline-item:nth-child(even)::before {
-  left: -10px; /* Adjusted position */
+  left: -10px;
 }
 
 .timeline-item h3 {
-  font-size: 1.3em; /* Reduced font size */
-  margin-bottom: 0.4em; /* Reduced margin */
+  font-size: 1.3em;
+  margin-bottom: 0.4em;
 }
 
 .timeline-item p {
-  font-size: 0.95em; /* Reduced font size */
+  font-size: 0.95em;
   color: var(--text-color);
-  margin: 0.3em 0; /* Reduced margin */
+  margin: 0.3em 0;
 }
 
 
-/* Education and Volunteering Timeline Items - unchanged */
+/* ========================================================== */
+/*       Education and Volunteering Timeline Items           */
+/* ========================================================== */
+/* Education and Volunteering Timeline Items remain the same */
 
 .education-item p,
 .volunteering-item p {
-  font-size: 0.9em; /* Further reduced font size */
-  margin: 0.2em 0; /* Further reduced margin */
+  font-size: 0.9em;
+  margin: 0.2em 0;
 }
 
 
-/* Work Experience Section Styles - unchanged */
+/* ========================================================== */
+/*                 Work Experience Section Styles             */
+/* ========================================================== */
+/* Work Experience Section Styles remain the same */
 
 .work-item {
-  margin-bottom: 40px; /* Reduced margin */
+  margin-bottom: 40px;
 }
 
 .work-item .work-item-content {
   display: flex;
   align-items: flex-start;
-  gap: 20px; /* Reduced gap */
+  gap: 20px;
 }
 
 .work-item .company-logo {
   flex-shrink: 0;
-  width: 80px; /* Reduced size */
-  height: 80px; /* Reduced size */
+  width: 80px;
+  height: 80px;
 }
 
 .work-item .company-logo img {
   max-width: 100%;
   max-height: 100%;
   display: block;
-  border-radius: 8px; /* Slightly smaller border radius */
+  border-radius: 8px;
   object-fit: contain;
 }
 
@@ -523,33 +556,33 @@ a:hover {
 }
 
 .work-item .work-details h3 {
-  font-size: 1.4em; /* Reduced font size */
+  font-size: 1.4em;
   margin-top: 0;
-  margin-bottom: 0.3em; /* Reduced margin */
+  margin-bottom: 0.3em;
 }
 
 .work-item .location,
 .work-item .dates,
 .work-item .role {
-  margin: 0.2em 0; /* Reduced margin */
-  font-size: 0.95em; /* Reduced font size */
+  margin: 0.2em 0;
+  font-size: 0.95em;
   color: #666;
 }
 
 .work-item .responsibilities {
-  margin: 8px 0 8px 20px; /* Reduced margin */
+  margin: 8px 0 8px 20px;
   list-style-type: disc;
 }
 
 .visit-website {
   display: inline-block;
-  margin-top: 8px; /* Reduced margin */
-  padding: 7px 12px; /* Reduced padding */
+  margin-top: 8px;
+  padding: 7px 12px;
   background-color: var(--primary-color);
   color: #fff;
-  border-radius: 4px; /* Slightly smaller border radius */
+  border-radius: 4px;
   text-decoration: none;
-  font-size: 0.9em; /* Reduced font size */
+  font-size: 0.9em;
   transition: background-color 0.3s ease;
 }
 
@@ -558,124 +591,243 @@ a:hover {
 }
 
 
-/* Skills Section - Domain Categories - unchanged */
+/* ========================================================== */
+/*               Skills Section - Domain Categories           */
+/* ========================================================== */
+/* Skills Section - Domain Categories remain the same */
 
 .skills-category {
-  margin-bottom: 20px; /* Reduced margin */
+  margin-bottom: 20px;
 }
 
 .skills-category h3 {
-  font-size: 1.3em; /* Reduced font size */
+  font-size: 1.3em;
   color: var(--primary-color);
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 10px;
 }
 
 .skills-category ul {
   list-style: disc;
-  margin-left: 20px; /* Reduced margin */
+  margin-left: 20px;
 }
 
 .skills-category li {
-  margin-bottom: 5px; /* Reduced margin */
-  font-size: 0.95em; /* Reduced font size */
+  margin-bottom: 5px;
+  font-size: 0.95em;
 }
 
 
-/* Responsive Adjustments */
+/* ========================================================== */
+/*                     Responsive Adjustments                 */
+/* ========================================================== */
+/* Media query for screens smaller than 768px (typical mobiles) - Timeline adjustments are key here */
 
 @media (max-width: 768px) {
+  .timeline {
+      padding: 20px 0; /* Adjust padding for mobile timeline */
+      margin: 20px 0;
+  }
+
   .timeline::before {
-    left: 15px; /* Adjusted for smaller screens */
+      left: 20px; /* Adjust timeline line position on mobile */
+      transform: translateX(0); /* Reset translateX for mobile timeline line */
   }
 
   .timeline-item {
-    width: 100%;
-    padding-left: 40px; /* Adjusted for smaller screens */
-    padding-right: 15px; /* Adjusted for smaller screens */
-    text-align: left;
-    margin-bottom: 30px; /* Reduced margin for smaller screens */
+      width: 90%; /* Make timeline items take more width on smaller screens */
+      max-width: 90%; /* Limit maximum width for timeline items on mobile */
+      padding: 15px; /* Adjust padding for mobile timeline items */
+      padding-left: 35px;
+      margin-left: 0; /* Reset left margin */
+      margin-right: 0; /* Reset right margin */
+      margin-bottom: 20px; /* Increase margin between items for vertical spacing */
+      display: block; /* Ensure items are displayed as block */
+      clear: both; /* Prevent floating and ensure stacking */
+      position: relative;
+    }
+
+  .timeline-item:nth-child(odd) {
+      left: auto; /* Reset left positioning */
+      text-align: left; /* Align text to the left for all items on mobile */
   }
 
-  .timeline-item:nth-child(odd)::before {
-    right: auto;
-    left: 8px; /* Adjusted for smaller screens */
+  .timeline-item:nth-child(even) {
+      left: auto; /* Reset left positioning */
+      text-align: left; /* Keep text alignment consistent */
   }
 
-  .timeline-item:nth-child(even)::before {
-    left: 8px; /* Adjusted for smaller screens */
+  .timeline-item::before {
+      top: 15px; /* Adjust bullet vertical position for mobile */
+      left: 8px; /* Position bullets to the left of content for mobile */
+      right: auto; /* Reset right positioning if it was set */
+      left: 0px;
   }
+
+
+  .timeline-item h3 {
+      font-size: 1.2em; /* Adjust font size for mobile timeline headings */
+  }
+
+  .timeline-item p {
+      font-size: 0.9em; /* Adjust font size for mobile timeline paragraphs */
+  }
+
+
+  /* Other Responsive Adjustments (non-timeline) - remain mostly the same, adjust if needed */
+
+  body {
+      font-size: 16px;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  h2 {
+      font-size: 1.6em;
+  }
+
+  h3 {
+      font-size: 1.3em;
+  }
+
+  h4 {
+      font-size: 1.1em;
+  }
+
+  .landing {
+      padding-top: 15%;
+      padding-bottom: 15%;
+  }
+
+  .profile-image {
+      width: 140px;
+      height: 140px;
+  }
+
+  .landing h1 {
+      font-size: 2em;
+  }
+
+  .landing p {
+      font-size: 0.9em;
+  }
+
+  .section {
+      padding: 20px 10px;
+  }
+
+  .section h2 {
+      font-size: 1.6em;
+  }
+
 
   .work-item .work-item-content {
-    flex-direction: column;
-    align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
   }
 
   .work-item .company-logo {
-    width: 70px; /* Reduced size for smaller screens */
-    height: 70px; /* Reduced size for smaller screens */
-    margin-bottom: 12px; /* Reduced margin for smaller screens */
+      width: 70px;
+      height: 70px;
+      margin-bottom: 12px;
   }
 
   .summary-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
   }
 
-
   .summary-section .profile-image {
-    margin-bottom: 15px; /* Reduced margin for smaller screens */
-    margin-right: 0;
+      margin-bottom: 15px;
+      margin-right: 0;
+      width: 120px;
+      height: 120px;
+  }
+
+  .summary-section .summary-text h2 {
+      font-size: 1.5em;
+  }
+
+  .summary-section .summary-text li {
+      font-size: 0.9em;
+  }
+
+  .icon-nav {
+      gap: 15px;
+      padding: 0 5%;
+  }
+
+  .nav-icon {
+      font-size: 1.8em;
+      width: 40px;
+      height: 40px;
+  }
+
+  .nav-text {
+      font-size: 0.8em;
   }
 
 
   /* Responsive adjustments for toggle buttons and scroll arrow */
-
   .toggle-container {
-    top: 8px; /* Move closer to the top on small screens */
-    right: 8px; /* Move closer to the right edge */
+      top: 8px;
+      right: 8px;
   }
-
 
   .toggle-button,
   .palette-button {
-    font-size: 1.4em; /* Slightly smaller icons on smaller screens */
-    margin-left: 4px; /* Reduce spacing between buttons */
+      font-size: 1.4em;
+      margin-left: 4px;
   }
-
 
   #colorSwitcher {
-    right: 0;
-    top: 80%;
-    font-size: 0.75em; /* Smaller font size for color switcher */
-    padding: 8px; /* Reduce padding for color switcher */
+      right: 0;
+      top: 80%;
+      font-size: 0.75em;
+      padding: 8px;
   }
-
 
   .scroll-arrow-container {
-    right: 8px; /* Move closer to the right edge */
+      right: 8px;
   }
 
-
   .scroll-arrow {
-    font-size: 1.4em; /* Slightly smaller arrow icon */
+      font-size: 1.4em;
+  }
+
+  /* Skills card adjustments for mobile */
+  .skills-categories-card-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .skill-category-card {
+      width: 90%;
+      max-width: none;
+      min-width: auto;
+      margin-bottom: 20px;
   }
 }
 
 
-/* Footer Styles - updated with LinkedIn */
+/* ========================================================== */
+/*                       Footer Styles                        */
+/* ========================================================== */
+/* Footer Styles remain the same */
 
 footer {
   background: var(--primary-color);
   color: #fff;
   text-align: center;
-  padding: 25px; /* Reduced padding */
-  margin-top: 40px; /* Reduced margin */
+  padding: 25px;
+  margin-top: 40px;
 }
 
 footer p {
-  font-size: 0.85em; /* Reduced font size */
-  margin-bottom: 8px; /* Reduced margin */
+  font-size: 0.85em;
+  margin-bottom: 8px;
 }
 
 footer a {
@@ -684,26 +836,31 @@ footer a {
 }
 
 footer .contact-info {
-  margin-top: 12px; /* Reduced margin */
+  margin-top: 12px;
   display: flex;
   justify-content: center;
-  gap: 20px; /* Reduced gap */
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 footer .contact-info a {
   color: #fff;
-  font-size: 0.95em; /* Reduced font size */
+  font-size: 0.95em;
   display: inline-flex;
   align-items: center;
-  gap: 6px; /* Reduced gap */
+  gap: 6px;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
-/* Skills Section - Category Cards Styling */
+
+/* ========================================================== */
+/*           Skills Section - Category Cards Styling          */
+/* ========================================================== */
+/* Skills Section - Category Cards Styling remain the same */
 
 #skills-content {
-  padding: 15px; /* Reduced padding */
+  padding: 15px;
 }
 
 
@@ -711,65 +868,64 @@ footer .contact-info a {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  padding-bottom: 15px; /* Reduced padding */
-  gap: 20px; /* Reduced gap */
+  padding-bottom: 15px;
+  gap: 20px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 
 /* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-
 /* .skills-categories-card-container::-webkit-scrollbar {
   display: none;
 } */
 
 
 .skill-category-card {
-  background-color: var(--section-background); /* Changed background to section background for card style */
-  color: var(--text-color); /* Changed color to text color for card style */
-  padding: 15px; /* Reduced padding in cards */
-  border-radius: 15px; /* More rounded corners for cards */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Reduced box shadow */
+  background-color: var(--section-background);
+  color: var(--text-color);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   min-width: 250px;
   flex: 1 1 300px;
   width: 280px;
   min-width: 280px;
   max-width: 280px;
-  border: 1px solid var(--secondary-color); /* Thinner border and secondary color for card style */
+  border: 1px solid var(--secondary-color);
   box-sizing: border-box;
   text-align: center;
 }
 
 
 .skill-category-card:hover {
-  transform: translateY(-5px); /* Reduced hover effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Reduced hover box shadow */
-  background-color: var(--accent-color); /* Changed hover background to accent color for card style */
-  color: var(--text-color); /* Kept text color on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-color);
+  color: var(--text-color);
   border-color: var(--primary-color);
 }
 
 
 .skill-category-card h3 {
-  font-size: 1.2em; /* Reduced size from previous response */
-  margin-bottom: 12px; /* Reduced margin */
-  color: var(--primary-color); /* Changed heading color to primary for card style */
-  border-bottom: 1px dashed var(--primary-color); /* Thinner and dashed border and primary color for card style */
-  padding-bottom: 6px; /* Reduced padding */
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+  border-bottom: 1px dashed var(--primary-color);
+  padding-bottom: 6px;
 }
 
 
 .skill-category-card ul.skill-list {
   list-style-type: disc;
-  padding-left: 20px; /* Reduced padding */
+  padding-left: 20px;
   text-align: left;
 }
 
 
 .skill-category-card ul.skill-list li {
-  margin-bottom: 6px; /* Reduced margin */
-  font-size: 0.95em; /* Reduced size from previous response */
-  line-height: 1.3; /* Reduced line height */
+  margin-bottom: 6px;
+  font-size: 0.95em;
+  line-height: 1.3;
 }

@@ -17,7 +17,7 @@ const siteData = {
         sectionId: "journey-summary",
         title: "My Journey at a Glance",
         iconClass: "fas fa-route",
-        profileImage: "files/divyaupadhyay.jpg",
+        profileImage: "files/my.jpg",
         summaryPoints: [
             { label: "Education", description: "MS in Computer and Information Sciences, University of Florida; B Tech in Computer Science and Engineering, KIIT University." },
             { label: "Skills", description: "Full-Stack Engineering, Machine Learning, Cloud & DevOps, Data Engineering, and more." },

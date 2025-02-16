@@ -20,8 +20,6 @@ class SPAView {
         this.mainContent.classList.toggle('spa-active');
 
         if (this.spaView.classList.contains('active') && !this.spaSectionsRendered) {
-            // SPA view is active and sections haven't been rendered yet
-            this.renderSPASections();
             this.spaSectionsRendered = true; // Set flag to true after rendering once
         }
     }
