@@ -58,7 +58,10 @@ const siteData = {
                 role: "AI Engineer",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
-                    "Developed a chatbot using Qwen2-VL for OCR and LangChain with Gemini for interactions, successfully processing unique prescription formats and styles in minutes, generating awareness and improving medication understanding by at least 15%."
+                    "Built and deployed AI-powered chatbots for telehealth, enabling appointment triage, symptom screening, and patient query resolution using OpenAI APIs and prompt engineering.",
+                    "Led development of a multi-agent telehealth platform, including specialized agents (e.g., Radiology Agent) to assist clinicians with medical interpretation and workflow automation.",
+                    "Developed scalable AI microservices with FastAPI, Docker, and Kubernetes; automated CI/CD pipelines with GitHub Actions, cutting manual ops by 40%.",
+                    "Optimized model performance through real-time feedback analysis, CSAT tracking, and prompt tuning—boosting user experience by 25% in A/B tests."
                 ]
             },
             {
@@ -79,18 +82,28 @@ const siteData = {
                 logo: "files/ndi.png",
                 location: "Trivandrum, India",
                 dates: "09/2018 - 06/2022",
-                role: "Software Engineer I & Intern",
+                role: "DevOps / Data Engineer",
                 companyIcon: "fa-solid fa-car",
                 responsibilities: [
-                    "Accelerated CI/CD pipeline delivery and AWS infrastructure automation by building the NextGen Delivery Platform, reducing SDLC timelines from 2 weeks to 3 days using Python, Boto3, Jenkins Job DSL Plugin, and Groovy Scripting.",
-                    "Built scalable web applications using Angular, Java Spring Boot, and MySQL, implementing both MVC and microservices architectures with Envoy as a sidecar proxy and Istio; applied performance optimizations including query indexing and Redis caching, ensuring security with JWT authentication, rate-limiting, and role-based access control.",
-                    "Architected and deployed a car-dent identification CNN model using AWS SageMaker for training and ECS for model serving; leveraged AWS CodePipeline for automated retraining and monitored with CloudWatch, reducing manual review time.",
-                    "Prepared environments using Ansible to configure deployment servers (AWS and Physical Data Centers), installing required dependencies and setting up security protocols while deploying projects using CI/CD pipelines (Bitbucket, Bamboo, Jenkins, SonarQube, and Nexus) for faster and reliable delivery.",
-                    "Improved code quality by increasing code coverage to 85% and reduced MTTR for security vulnerabilities by 30% using SonarQube, JMeter, Clair Scan, and Veracode, with faster rollbacks through database version control using Liquibase.",
-                    "Designed a website using Angular, Django, and PostgreSQL for monitoring DevOps tools, reducing downtime by 30%.",
-                    "Supported digitizing tightly coupled legacy infra using Agile-driven SDLC and implementing CI/CD pipelines.",
-                    "Built and deployed cloud environments using AWS CloudFormation (CNF) for scalable \"Infrastructure as Code\" (IaC).",
-                    "Set up Prometheus for real-time monitoring of system metrics, and integrated it with ELK for troubleshooting."
+                    "Led DevOps automation for Nissan’s Next Gen Delivery initiative, building CI/CD pipelines with Jenkins, GitLab CI, and GitHub Actions to cut release times by 40%.",
+                    "Automated cloud infrastructure provisioning using Terraform, Ansible, and AWS CloudFormation, enabling zero-touch deployments across environments.",
+                    "Engineered scalable ETL pipelines and monitoring systems using Apache Airflow, PySpark, Prometheus, and ELK Stack—boosting data reliability and reducing system downtime.",
+                    "Drove cross-functional collaboration across Dev, QA, and Ops teams, improving deployment velocity by 25% and delivering actionable insights through Tableau dashboards.",
+                ]
+            },
+            {
+                company: "Trigent Software, India",
+                website: "https://trigent.com/",
+                logo: "files/trigentsoft.png",
+                location: "Bangalore, India",
+                dates: "01/2018 - 09/2018",
+                role: "Data Engineer Intern",
+                companyIcon: "fa-solid fa-desktop",
+                responsibilities: [
+                    "Built and maintained ETL pipelines using Python, SQL, and Apache NiFi to process structured and unstructured data for analytics and reporting.",
+                    "Contributed to cloud migration efforts to AWS, working with S3, EC2, and RDS to support scalable, cost-efficient data storage solutions.",
+                    "Improved data quality and performance through preprocessing workflows in Pandas/NumPy and optimization of complex SQL queries.",
+                    "Enabled data-driven decision-making by supporting Tableau dashboard development and participating in schema design and documentation for scalable analytics.",
                 ]
             }
         ]
@@ -236,7 +249,7 @@ const siteData = {
         title: "Certifications",
         iconClass: "fas fa-certificate",
         items: [
-            { certification: "Data Engineering Bootcamp", organization: "dataexpert.io", years: "08/2025 - Present" },
+            { certification: "Data Engineering Bootcamp", organization: "dataexpert.io", years: "03/2025 - Present" },
             { certification: "Agentic Design Patterns with AutoGen", organization: "DeepLearning.AI", years: "10/2024 - Present" },
             { certification: "GPU-Accelerated Data Manipulation", organization: "NVIDIA", years: "10/2024 - Present" },
             { certification: "Knowledge Graphs for RAG", organization: "DeepLearning.AI", years: "09/2024 - Present" },
