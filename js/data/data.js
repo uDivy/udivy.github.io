@@ -50,11 +50,27 @@ const siteData = {
         iconClass: "fas fa-briefcase",
         items: [
             {
-                company: " Health Innovators Inc.",
+                company: "Golok Global INC.",
+                website: "https://golokglobal.com/",
+                logo: "files/healthInnInc.png",
+                location: "Gainesville, FL, USA",
+                dates: "06/2025 - Present",
+                role: "Software Engineer",
+                companyIcon: "fa-solid fa-taxi",
+                responsibilities: [
+                    "Leading backend development for a scalable travel platform, overseeing end-to-end architecture, backend services, and API integration using React, Java (Spring Boot), and AWS.",
+                    "Designing and deploying an AI-powered chatbot for a ride-hailing service (Uber-like app), leveraging LLMs, LangChain, and RAG frameworks to deliver real-time query resolution and booking assistance.",
+                    "Spearheading process optimization by identifying development pain points and delivering tooling, scripts, and sandbox environments to streamline onboarding and testing.",
+                    "Creating technical documentation and infrastructure blueprints to support agile DevOps teams in accelerating development velocity.",
+                    "Implementing secure API gateways, CI/CD pipelines, and monitoring dashboards for backend microservices, ensuring low latency and high uptime."
+                ]
+            },
+            {
+                company: "Health Innovators Inc.",
                 website: "https://www.hiagents.life/",
                 logo: "files/healthInnInc.png",
                 location: "Remote",
-                dates: "08/2024 - Present",
+                dates: "08/2024 - 06/2025",
                 role: "AI Engineer",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
