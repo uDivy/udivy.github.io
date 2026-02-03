@@ -55,7 +55,7 @@ const siteData = {
                 logo: "files/healthInnInc.png",
                 location: "Gainesville, FL, USA",
                 dates: "06/2025 - Present",
-                role: "Software Engineer",
+                role: "AI Software Engineer",
                 companyIcon: "fa-solid fa-taxi",
                 responsibilities: [
                     "Architected an AI-driven customer support automation platform, cutting query resolution time by 11% using Gemma with RAG and context engineering; built intent classification, confidence-based routing, and human-in-the-loop escalation for reliability.",
@@ -71,7 +71,7 @@ const siteData = {
                 logo: "files/healthInnInc.png",
                 location: "Remote",
                 dates: "08/2024 - 06/2025",
-                role: "AI Engineer",
+                role: "Data Scientist",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
                     "Designed and deployed LLM-powered conversational pipelines for telehealth workflows using OpenAI APIs with structured prompting, function calling, and RAG  over clinical FAQs, enabling automated symptom screening and patient triage; evaluated performance achieving an 18% increase in intent classification F1 scores and a 25% boost in resolution rates.",
@@ -99,7 +99,7 @@ const siteData = {
                 logo: "files/ndi.png",
                 location: "Trivandrum, India",
                 dates: "09/2018 - 06/2022",
-                role: "DevOps / Data Engineer",
+                role: "Software Engineer (DevOps)",
                 companyIcon: "fa-solid fa-car",
                 responsibilities: [
                     "Contributed to the Next-Gen Delivery platform, a company-wide initiative to modernize software delivery across Nissan’s digital ecosystem by designing end-to-end automation from code commit through production release, standardizing CI/CD practices.",
