@@ -58,11 +58,11 @@ const siteData = {
                 role: "Software Engineer",
                 companyIcon: "fa-solid fa-taxi",
                 responsibilities: [
-                    "Leading backend development for a scalable travel platform, overseeing end-to-end architecture, backend services, and API integration using React, Java (Spring Boot), and AWS.",
-                    "Designing and deploying an AI-powered chatbot for a ride-hailing service (Uber-like app), leveraging LLMs, LangChain, and RAG frameworks to deliver real-time query resolution and booking assistance.",
-                    "Spearheading process optimization by identifying development pain points and delivering tooling, scripts, and sandbox environments to streamline onboarding and testing.",
-                    "Creating technical documentation and infrastructure blueprints to support agile DevOps teams in accelerating development velocity.",
-                    "Implementing secure API gateways, CI/CD pipelines, and monitoring dashboards for backend microservices, ensuring low latency and high uptime."
+                    "Architected an AI-driven customer support automation platform, cutting query resolution time by 11% using Gemma with RAG and context engineering; built intent classification, confidence-based routing, and human-in-the-loop escalation for reliability.",
+                    "Designed and deployed a real-time AI-powered conversational system for a ride-hailing platform, integrating LLM orchestration, RAG-based knowledge grounding, and workflow automation for booking assistance and issue resolution at scale.",
+                    "Built and scaled a low-latency payment processing API using FastAPI with Redis-based caching and idempotency keys, handling 500+ concurrent requests with sub-80ms P95 internal processing time before async handoff to Stripe.",
+                    "Implemented an automated MLOps pipeline integrating GitHub, Jenkins, Docker-based model packaging, AWS ECS, CI/CD validation, and staged deployments, reducing model release latency by 95% while enforcing reproducibility and rollback safety.",
+                    "Led backend system design for a scalable travel platform, owning end-to-end service architecture, API contracts, and AWS cloud deployment; integrated React clients with Java Spring Boot microservices."
                 ]
             },
             {
@@ -74,10 +74,11 @@ const siteData = {
                 role: "AI Engineer",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
-                    "Built and deployed AI-powered chatbots for telehealth, enabling appointment triage, symptom screening, and patient query resolution using OpenAI APIs and prompt engineering.",
-                    "Led development of a multi-agent telehealth platform, including specialized agents (e.g., Radiology Agent) to assist clinicians with medical interpretation and workflow automation.",
-                    "Developed scalable AI microservices with FastAPI, Docker, and Kubernetes; automated CI/CD pipelines with GitHub Actions, cutting manual ops by 40%.",
-                    "Optimized model performance through real-time feedback analysis, CSAT tracking, and prompt tuning—boosting user experience by 25% in A/B tests."
+                    "Designed and deployed LLM-powered conversational pipelines for telehealth workflows using OpenAI APIs with structured prompting, function calling, and RAG  over clinical FAQs, enabling automated symptom screening and patient triage; evaluated performance achieving an 18% increase in intent classification F1 scores and a 25% boost in resolution rates.",
+                    "Architected a multi-agent clinical decision-support system using LLM orchestration (router + specialist agents, including a Radiology Agent) with report embedding, cross-agent context sharing, and chain-of-thought–constrained reasoning, improving clinician task completion time by 22% and reducing manual report lookup latency by 35%.",
+                    "Implemented scalable ML model serving via FastAPI with async I/O, Dockerized deployments, and Kubernetes HPA for auto-scaling; instrumented Prometheus/Grafana for latency and error-rate monitoring, achieving 99.9% service uptime and sub-120ms P95 inference latency in production.",
+                    "Built a clinical NLP information extraction pipeline using Hugging Face Transformers (fine-tuned BioClinicalBERT / PubMedBERT) with NER and entity normalization to map unstructured notes and pathology reports to structured FHIR-aligned schemas, improving extraction F1-score to 0.86 and increasing chart processing throughput by 60%.",
+                    "Optimized analytical SQL pipelines supporting daily ingestion of ~50GB of patient interaction data, refactoring joins and indexing strategies to reduce query latency by 70% and meet healthcare reporting SLAs."
                 ]
             },
             {
@@ -101,27 +102,29 @@ const siteData = {
                 role: "DevOps / Data Engineer",
                 companyIcon: "fa-solid fa-car",
                 responsibilities: [
-                    "Led DevOps automation for Nissan’s Next Gen Delivery initiative, building CI/CD pipelines with Jenkins, GitLab CI, and GitHub Actions to cut release times by 40%.",
-                    "Automated cloud infrastructure provisioning using Terraform, Ansible, and AWS CloudFormation, enabling zero-touch deployments across environments.",
-                    "Engineered scalable ETL pipelines and monitoring systems using Apache Airflow, PySpark, Prometheus, and ELK Stack—boosting data reliability and reducing system downtime.",
-                    "Drove cross-functional collaboration across Dev, QA, and Ops teams, improving deployment velocity by 25% and delivering actionable insights through Tableau dashboards.",
+                    "Contributed to the Next-Gen Delivery platform, a company-wide initiative to modernize software delivery across Nissan’s digital ecosystem by designing end-to-end automation from code commit through production release, standardizing CI/CD practices.",
+                    "Engineered fully automated CI/CD pipelines using Jenkins, GitHub, SonarQube, Veracode & Nexus integrating automated testing, artifact versioning, and deployment gates to reduce release cycle time by 40% and minimize human error across multi-service deployments.",
+                    "Automated infrastructure provisioning and configuration management using Ansible & AWS CloudFormation, enabling zero-touch environment spin-up for dev, staging, and production with reproducible, immutable infrastructure patterns.",
+                    "Implemented observability and alerting across critical services using Prometheus, Grafana, and the ELK stack, establishing SLO-driven monitoring and proactive alerting that reduced incident response time and improved platform availability.",
+                    "Developed computer vision–based automated visual inspection pipelines for vehicle body panels using image preprocessing and defect detection models, replacing manual spot-check workflows and improving defect detection efficiency by 25%.",
+                    "Built interactive operational analytics dashboards in Tableau, transforming static weekly reports into real-time KPI visualizations (e.g., Average Handling Time, throughput), reducing manual reporting effort and enabling data-driven operational decisions."
                 ]
             },
-            {
-                company: "Trigent Software, India",
-                website: "https://trigent.com/",
-                logo: "files/trigentsoft.png",
-                location: "Bangalore, India",
-                dates: "01/2018 - 09/2018",
-                role: "Data Engineer Intern",
-                companyIcon: "fa-solid fa-desktop",
-                responsibilities: [
-                    "Built and maintained ETL pipelines using Python, SQL, and Apache NiFi to process structured and unstructured data for analytics and reporting.",
-                    "Contributed to cloud migration efforts to AWS, working with S3, EC2, and RDS to support scalable, cost-efficient data storage solutions.",
-                    "Improved data quality and performance through preprocessing workflows in Pandas/NumPy and optimization of complex SQL queries.",
-                    "Enabled data-driven decision-making by supporting Tableau dashboard development and participating in schema design and documentation for scalable analytics.",
-                ]
-            }
+            // {
+            //     company: "Trigent Software, India",
+            //     website: "https://trigent.com/",
+            //     logo: "files/trigentsoft.png",
+            //     location: "Bangalore, India",
+            //     dates: "01/2018 - 09/2018",
+            //     role: "Data Engineer Intern",
+            //     companyIcon: "fa-solid fa-desktop",
+            //     responsibilities: [
+            //         "Built and maintained ETL pipelines using Python, SQL, and Apache NiFi to process structured and unstructured data for analytics and reporting.",
+            //         "Contributed to cloud migration efforts to AWS, working with S3, EC2, and RDS to support scalable, cost-efficient data storage solutions.",
+            //         "Improved data quality and performance through preprocessing workflows in Pandas/NumPy and optimization of complex SQL queries.",
+            //         "Enabled data-driven decision-making by supporting Tableau dashboard development and participating in schema design and documentation for scalable analytics.",
+            //     ]
+            // }
         ]
     },
     volunteeringSection: {
