@@ -74,6 +74,23 @@ const siteData = {
                 ]
             },
             {
+                company: "University of Florida",
+                website: "https://www.ufl.edu",
+                logo: "files/uflogo.png",
+                location: "Gainesville, FL, USA",
+                dates: "11/2025 - Present",
+                role: "Website Developer",
+                companyIcon: "fa fa-globe",
+                responsibilities: [
+                    "Architected and launched the institution's enterprise website from scratch, establishing standardized UF digital brand guidelines and improving user engagement (UX) metrics across target audiences.",
+                    "Engineered modular custom CSS and frontend style overrides to extend native platform capabilities, ensuring 100% responsive design and visual compliance across all mobile and desktop viewports.",
+                    "Overhauled web accessibility framework to achieve full WCAG 2.1 (Level A/AA) compliance; conducted automated QA audits and technical SEO optimizations to boost organic search rankings.",
+                    "Directed enterprise WordPress infrastructure administration, managing server storage allocation, security patching, plugin ecosystems, and disaster recovery workflows that successfully recovered 5+ years of legacy visual assets.",
+                    "Integrated Google Analytics to evaluate user interaction patterns, driving data-informed decisions to expand digital audience reach and campaign performance.",
+                    "Designed brand-aligned digital marketing assets, speaker series graphics, campaign posters, and promotional logos using Adobe Creative Cloud and Canva."
+                ]
+            },
+            {
                 company: "Nissan Digital India LLP",
                 website: "https://www.nissanmotor.jobs/ami/india/ndi/index.html",
                 logo: "files/ndi.png",
