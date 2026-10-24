@@ -68,8 +68,8 @@ const siteData = {
             },
             {
                 company: "Golok Global INC.",
-                website: "https://golokglobal.com/",
-                logo: "files/healthInnInc.png",
+                website: "https://berymo.com/",
+                logo: "files/gginc.png",
                 location: "Gainesville, FL, USA",
                 dates: "06/2025 - 02/2026",
                 role: "AI Software Engineer",
@@ -91,7 +91,10 @@ const siteData = {
                 role: "AI Engineer",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
-                    "Developed a chatbot using Qwen2-VL for OCR and LangChain with Gemini for interactions, successfully processing unique prescription formats and styles in minutes, generating awareness and improving medication understanding by at least 15%."
+                    "Designed and deployed LLM-powered conversational pipelines for telehealth workflows using OpenAI APIs with structured prompting, function calling, and RAG  over clinical FAQs, enabling automated symptom screening and patient triage; evaluated performance achieving an 18% increase in intent classification F1 scores and a 25% boost in resolution rates.",
+                    "Architected a multi-agent clinical decision-support system using LLM orchestration (router + specialist agents, including a Radiology Agent) with report embedding, cross-agent context sharing, and chain-of-thought–constrained reasoning, improving clinician task completion time by 22% and reducing manual report lookup latency by 35%.",
+                    "Built a clinical NLP information extraction pipeline using Hugging Face Transformers (fine-tuned BioClinicalBERT / PubMedBERT) with NER and entity normalization to map unstructured notes and pathology reports to structured FHIR-aligned schemas, improving extraction F1-score to 0.86 and increasing chart processing throughput by 60%.",
+                    "Optimized analytical SQL pipelines supporting daily ingestion of ~50GB of patient interaction data, refactoring joins and indexing strategies to reduce query latency by 70% and meet healthcare reporting SLAs."
                 ]
             },
             {
