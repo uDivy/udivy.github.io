@@ -87,7 +87,7 @@ const siteData = {
                 website: "https://www.hiagents.life/",
                 logo: "files/healthInnInc.png",
                 location: "Remote",
-                dates: "08/2024 - Present",
+                dates: "08/2024 - 06/2025",
                 role: "AI Engineer",
                 companyIcon: "fas fa-heartbeat",
                 responsibilities: [
