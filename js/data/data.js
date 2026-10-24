@@ -71,7 +71,7 @@ const siteData = {
                 website: "https://golokglobal.com/",
                 logo: "files/healthInnInc.png",
                 location: "Gainesville, FL, USA",
-                dates: "06/2025 - Present",
+                dates: "06/2025 - 02/2026",
                 role: "AI Software Engineer",
                 companyIcon: "fa-solid fa-taxi",
                 responsibilities: [
