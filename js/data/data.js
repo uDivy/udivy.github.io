@@ -49,6 +49,39 @@ const siteData = {
         title: "Work Experience",
         iconClass: "fas fa-briefcase",
         items: [
+             {
+                company: "University of Florida",
+                website: "https://www.ufl.edu",
+                logo: "files/uflogo.png",
+                location: "Gainesville, FL, USA",
+                dates: "11/2025 - Present",
+                role: "Website Developer",
+                companyIcon: "fa fa-globe",
+                responsibilities: [
+                    "Architected and launched the institution's enterprise website from scratch, establishing standardized UF digital brand guidelines and improving user engagement (UX) metrics across target audiences.",
+                    "Engineered modular custom CSS and frontend style overrides to extend native platform capabilities, ensuring 100% responsive design and visual compliance across all mobile and desktop viewports.",
+                    "Overhauled web accessibility framework to achieve full WCAG 2.1 (Level A/AA) compliance; conducted automated QA audits and technical SEO optimizations to boost organic search rankings.",
+                    "Directed enterprise WordPress infrastructure administration, managing server storage allocation, security patching, plugin ecosystems, and disaster recovery workflows that successfully recovered 5+ years of legacy visual assets.",
+                    "Integrated Google Analytics to evaluate user interaction patterns, driving data-informed decisions to expand digital audience reach and campaign performance.",
+                    "Designed brand-aligned digital marketing assets, speaker series graphics, campaign posters, and promotional logos using Adobe Creative Cloud and Canva."
+                ]
+            },
+            {
+                company: "Golok Global INC.",
+                website: "https://golokglobal.com/",
+                logo: "files/healthInnInc.png",
+                location: "Gainesville, FL, USA",
+                dates: "06/2025 - Present",
+                role: "AI Software Engineer",
+                companyIcon: "fa-solid fa-taxi",
+                responsibilities: [
+                    "Architected an AI-driven customer support automation platform, cutting query resolution time by 11% using Gemma with RAG and context engineering; built intent classification, confidence-based routing, and human-in-the-loop escalation for reliability.",
+                    "Designed and deployed a real-time AI-powered conversational system for a ride-hailing platform, integrating LLM orchestration, RAG-based knowledge grounding, and workflow automation for booking assistance and issue resolution at scale.",
+                    "Built and scaled a low-latency payment processing API using FastAPI with Redis-based caching and idempotency keys, handling concurrent requests with internal processing time before async handoff to Stripe.",
+                    "Implemented an automated MLOps pipeline integrating GitHub, Jenkins, Docker-based model packaging, AWS ECS, CI/CD validation, and staged deployments, reducing model release latency by 95% while enforcing reproducibility and rollback safety.",
+                    "Led backend system design for a scalable travel platform, owning end-to-end service architecture, API contracts, and AWS cloud deployment; integrated React clients with Java Spring Boot microservices."
+                ]
+            },
             {
                 company: " Health Innovators Inc.",
                 website: "https://www.hiagents.life/",
@@ -71,23 +104,6 @@ const siteData = {
                 companyIcon: "fa fa-graduation-cap",
                 responsibilities: [
                     "Delivered lectures, provided technical assistance, and managed Canvas for the Mobile Computing course."
-                ]
-            },
-            {
-                company: "University of Florida",
-                website: "https://www.ufl.edu",
-                logo: "files/uflogo.png",
-                location: "Gainesville, FL, USA",
-                dates: "11/2025 - Present",
-                role: "Website Developer",
-                companyIcon: "fa fa-globe",
-                responsibilities: [
-                    "Architected and launched the institution's enterprise website from scratch, establishing standardized UF digital brand guidelines and improving user engagement (UX) metrics across target audiences.",
-                    "Engineered modular custom CSS and frontend style overrides to extend native platform capabilities, ensuring 100% responsive design and visual compliance across all mobile and desktop viewports.",
-                    "Overhauled web accessibility framework to achieve full WCAG 2.1 (Level A/AA) compliance; conducted automated QA audits and technical SEO optimizations to boost organic search rankings.",
-                    "Directed enterprise WordPress infrastructure administration, managing server storage allocation, security patching, plugin ecosystems, and disaster recovery workflows that successfully recovered 5+ years of legacy visual assets.",
-                    "Integrated Google Analytics to evaluate user interaction patterns, driving data-informed decisions to expand digital audience reach and campaign performance.",
-                    "Designed brand-aligned digital marketing assets, speaker series graphics, campaign posters, and promotional logos using Adobe Creative Cloud and Canva."
                 ]
             },
             {
